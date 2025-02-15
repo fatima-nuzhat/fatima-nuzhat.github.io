@@ -1,0 +1,326 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const container = document.querySelector('.bal-container');
+    const handle = container.querySelector('.bal-handle');
+    const beforeDiv = container.querySelector('.bal-before');
+    let isDragging = false;
+
+    const move = (e) => {
+        if (!isDragging) return;
+        
+        const rect = container.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const percentage = (x / rect.width) * 100;
+        
+        const constrainedPercentage = Math.max(0, Math.min(100, percentage));
+        
+        beforeDiv.style.width = `${constrainedPercentage}%`;
+        handle.style.left = `${constrainedPercentage}%`;
+    };
+
+    handle.addEventListener('mousedown', () => isDragging = true);
+    document.addEventListener('mousemove', move);
+    document.addEventListener('mouseup', () => isDragging = false);
+    container.addEventListener('mouseleave', () => isDragging = false);
+    
+    // Initial position
+    beforeDiv.style.width = '50%';
+    handle.style.left = '50%';
+});
+</script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Fatima Nuzhat</title>
+
+    <meta name="author" content="Fatima Nuzhat">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="./stylesheet.css">
+    
+  </head>
+
+  <body>
+    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+      <tr style="padding:0px">
+        <td style="padding:0px">
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr style="padding:0px">
+              <td style="padding:2.5%;width:63%;vertical-align:middle">
+                <p class="name" style="text-align: center;">
+                  Fatima Nuzhat
+                </p>
+                <p> I am a recent graduate from the <b>Shahjalal University of Science and Technology</b> with a bachelor in Computer Science and Engineering. My research interests are <b>Computer Vision, Light-weight ML models, Biometric Data, Trustwrothy AI, and Medical Image Segmentation </b></p>
+                <p>
+                My long-term research goal is to develop AI algorithms that can learn from small data and generalize well to new tasks. I am particularly interested in the intersection of computer vision and healthcare. I want to democratize AI in computer vision, make them less prone to biases and increase fairness.
+                </p>
+                <p style="color:red">Seeking MSc position for Fall 2025</p>
+                <p style="text-align:center">
+                  <a href="mailto:nuzhatf901@gmail.com">Email</a> &nbsp;/&nbsp;
+                  <a href="data/CV_Fatima_Nuzhat.pdf">CV</a> &nbsp;/&nbsp;
+                  <a href="data/bio.txt">Bio</a> &nbsp;/&nbsp;
+                  <a href="https://github.com/fatima-nuzhat">Github</a>
+                </p>
+              </td>
+              <td style="padding:2.5%;width:37%;max-width:37%">
+                <a href="images/nuz.jpg"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 0%;" alt="profile photo" src="images/nuz.jpg" class="hoverZoomLink"></a>
+              </td>
+            </tr>
+          </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+              <tr>
+              <td style="padding:16px;width:100%;vertical-align:middle">
+                <h2>Research</h2>
+                <p>
+                  I'm interested in <b>image restoration</b>, <b>multi-modal learning</b>, <b>medical image analysis</b>, <b>3D reconstruction</b>, and <b>generative models</b>. I'm particularly interested in developing algorithms that can learn from small data and generalize well to new tasks. I'm also interested in the intersection of computer vision and healthcare, and I'm excited about the potential for AI to improve patient outcomes and reduce healthcare costs.
+                </p>
+              </td>
+            </tr>
+          </tbody></table>
+
+        <table style="width:100%; margin:0 auto; border:0; border-spacing:0; padding:16px;"><tbody>
+            <tr>
+              <td>
+                <h2>Education</h2>
+              </td>
+            </tr>
+          </tbody></table>
+          <table><tbody>
+            
+           
+            <tr>
+              <td>
+						     
+              </td>
+              <td style="padding:16px">
+                <a href="https://www.sust.edu/" style="font-size:25px">Shahjalal University of Science and Technology</a><br>
+                <p  style="font-size:15px">BS.c Engg. in Computer Science and Engineering, <b>(CGPA 3.67/4.00)</b>, top <b>15%</b> of class</p>
+                <p><b>Jan 2019 - Jan 2024</b></p>
+              </td>
+            </tr>
+  
+            
+          </tbody></table>
+
+
+
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+
+     <tr onmouseout="r2r_stop()" onmouseover="r2r_start()" bgcolor="#ffffd0">
+        <td style="padding:16px;width:30%;vertical-align:middle">
+            <div class="comparison-wrapper">
+                <div class="bal-container">
+                    <div class="bal-after">
+                        <img src="images/Sharp.png" alt="Sharp Image">
+                        <div class="afterLabel">Sharp</div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </td>
+        <td style="padding:8px;width:70%;vertical-align:middle">
+            <a href="https://github.com/Metalicana/Blind-Image-Deblurring-with-FFT-ReLU-Sparsity-Prior">
+                <span class="papertitle">Blind Image Deblurring with FFT-ReLU Sparsity Prior</span>
+            </a>
+            <br>
+            <strong>Abdul Mohaimen Al Radi<sup>*</sup></strong>,
+            <a href="https://prothitoshovon.github.io/">Prothito Shovon Majumder<sup>*</sup></a>,
+            <a href="https://mmkhansajeeb.com/">Md Mosaddek Khan</a>,
+            <br>
+            <em>WACV</em>, 2025
+            <br>
+            <a href="https://arxiv.org/abs/2406.08344">download</a>
+            <p></p>
+            <p>
+                Blind image deblurring is the process of recovering a sharp image from a blurred one without prior knowledge about the blur kernel. It is a small data problem, since the key challenge lies in estimating the unknown degrees of blur from a single image or limited data, instead of learning from large datasets. The solution depends heavily on developing algorithms that effectively model the image degradation process. We introduce a method that leverages a prior which targets the blur kernel to achieve effective deblurring across a wide range of image types. In our extensive empirical analysis, our algorithm achieves results that are competitive with the state-of-the-art blind image deblurring algorithms, and it offers up to two times faster inference, making it a highly efficient solution.
+            </p>
+        </td>
+    </tr>
+
+    <br>
+
+
+    <tr onmouseout="r2r_stop()" onmouseover="r2r_start()">
+        <td style="padding:16px;width:30%;vertical-align:middle">
+        <div class="comparison-wrapper">
+            <div class="sal-container">
+                <div class="bal-before">
+                    <img src="images/composite.jpg" alt="Sharp Image"> 
+                    
+                </div>
+            </div>
+        </div>
+        </td>
+        <td style="padding:8px;width:70%;vertical-align:middle">
+            <a href="https://github.com/Dip-to/Vision-Transformer-and-FFT-ReLU-Fusion-for-Advanced-Image-Deblurring">
+                <span class="papertitle">Vision Transformer and FFT-ReLU Fusion for Advanced Image Deblurring</span>
+            </a>
+            <br>
+            <a href="">Syed Mumtahin Mahmud</a>
+            <a href="">Mahdi Mohd Hossain Noki1</a>
+            <a href="https://prothitoshovon.github.io/">Prothito Shovon Majumder</a>,
+            <strong>Abdul Mohaimen Al Radi/<strong>,
+            <a href="">Md. Haider Ali</a>
+            <a href="https://mmkhansajeeb.com/">Md Mosaddek Khan</a>,
+            <br>
+            <em>Under Review</em>
+            <br>
+            <a href="https://www.researchsquare.com/article/rs-5306286/v1">download</a>
+            <p></p>
+            <p>
+               We propose a novel approach to blind image deblurring that combines Vision Transformers with Fast Fourier Transform (FFT) and ReLU sparsity priors. Our method efficiently captures both local and global features while targeting blur-related frequencies, achieving competitive results with state-of-the-art methods at faster inference speeds. Through extensive experiments on benchmark datasets and human evaluations, we demonstrate that our technique produces high-quality results across diverse image types, making it well-suited for real-world applications.
+            </p>
+        </td>
+    </tr>
+
+     <br>
+
+
+
+    <tr onmouseout="r2r_stop()" onmouseover="r2r_start()">
+        <td style="padding:16px;width:30%;vertical-align:middle">
+          <div class="comparison-wrapper">
+            <div class="tal-container">
+                <div class="bal-before">
+                    <img src="images/wb.png" alt="Sharp Image"> 
+                    
+                </div>
+            </div>
+        </div>
+        </td>
+        <td style="padding:8px;width:70%;vertical-align:middle">
+            <a href="https://github.com/Metalicana/WBAN_NS3_VIRTUAL_SCHEME">
+                <span class="papertitle">An end-to-end authentication mechanism for wireless body area networks</span>
+            </a>
+            <br> 
+            <a href="">Mosarrat Jahan</a>,
+            <a href="">Fatema Tuz Zohra</a>,
+            <a href="">Md Kamal Parvez</a>,
+            <a href="">Upama Kabir</a>,
+            <strong>Abdul Mohaimen Al Radi</strong>,
+            <a href="">Md. Haider Ali</a>
+            <a href="">Shaily Kabir</a>,
+            <br>
+            <em>Smart Health, By Elsevier, 2023</em>
+            <br>
+            <a href="https://www.sciencedirect.com/science/article/abs/pii/S2352648323000417">Journal</a>
+            <p></p>
+            <p>
+This paper presents a secure authentication scheme for Wireless Body Area Networks (WBAN) in healthcare. Unlike existing approaches that assume patients' phones are trustworthy, our method treats phones as semi-trusted while enabling secure communication between medical sensors and healthcare providers. Analysis shows the scheme is both secure against attacks and efficient in real-world conditions.
+            </p>
+        </td>
+    </tr>
+
+
+
+
+
+          </tbody></table>
+
+
+          <table style="width:100%; margin:0 auto; border:0; border-spacing:0; padding:16px;"><tbody>
+            <tr>
+              <td>
+                <h2>News</h2>
+              </td>
+            </tr>
+          </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            
+           
+            <tr>
+              
+              <td style="padding:25px;width:80%;vertical-align:middle">
+                <a href="" style="color:black"></a>
+               
+              </td>
+            </tr>
+            </tbody></table>
+
+          <!-- MARKING HERE FOR WORK EXPERIENCE -->
+          <table style="width:100%; margin:0 auto; border:0; border-spacing:0; padding:16px;"><tbody>
+            <tr>
+              <td>
+                <h2>Work Experience</h2>
+              </td>
+            </tr>
+          </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            
+           
+            <tr>
+              <td align="center" style="padding:16px;width:20%;vertical-align:middle">
+						     <div class="colored-box">
+								 <img src="images/sust.png" alt="SUST" style="width:100%">
+								 </div>
+              </td>
+              <td style="padding:8px;width:80%;vertical-align:middle">
+                <p> <b>Research Collaborator</b>, <a href="https://www.sust.edu/">Shahjalal University of Science and Technology</a>,<br> Jan 2023 - Dec 2024<br> Advised by <a href="https://www.sust.edu/departments/cse/faculty/sadia-cse@sust.edu">Dr. Sadia Sultana</a></p>
+
+              </td>
+            </tr>
+
+            <tr>
+              <td align="center" style="padding:16px;width:20%;vertical-align:middle ;">
+						     <div class="colored-box">
+								 <img src="images/nus.jpg" alt="NUS" style="width:130%">
+								 </div>
+              </td>
+              <td style="padding:8px;width:80%;vertical-align:middle">
+                <p> <b>Research Assistant</b>, <a href="https://www.comp.nus.edu.sg/">National University of Singapore</a>, <br> July 2024 - Sept 2024<br> Advised by <a href="https://www.comp.nus.edu.sg/cs/people/tsim/">Dr. Terence Sim</a></p>
+
+              </td>
+            </tr>
+  
+            
+          </tbody></table>
+          
+					<table style="width:100%; margin:0 auto; border:0; border-spacing:0; padding:16px;"><tbody>
+            <tr>
+              <td>
+                <h2>Additional Experience</h2>
+              </td>
+            </tr>
+          </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            
+           
+            <tr>
+              <td align="center" style="padding:16px;width:20%;vertical-align:middle">
+						     <div class="colored-box" style="background-color: #fcb97d;">
+								 <h2>Workshops</h2>
+								 </div>
+              </td>
+              <td style="padding:8px;width:80%;vertical-align:middle">
+                <a href="https://github.com/Metalicana/CAIL-Workshop-Session-2-Transformer-From-Scratch">Hands on Deep Learning and Open Source Large Language Models, 2024</a>
+
+              </td>
+            </tr>
+  
+            
+          </tbody></table>
+
+
+
+
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+              <td style="padding:0px">
+                
+                <p style="text-align:center;font-size:10px;color:gray">© Abdul Mohaimen Al Radi</p>
+                <br>
+                <p style="text-align:center;font-size:10px;">
+                  Template from <a style="font-size:10px"href="https://brandon-liu-jx.github.io/">Jon Barron</a>
+                </p>
+              </td>
+            </tr>
+          </tbody></table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
