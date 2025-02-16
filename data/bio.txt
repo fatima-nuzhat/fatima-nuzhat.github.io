@@ -1,0 +1,2 @@
+I am a recent graduate from the Shahjalal University of Science and Technology with a bachelor of Engineering in Computer Science and Engineering.
+I specialize in computer vision, with experience in light weight deep learning models, gait recognition, and medical image segmentation
